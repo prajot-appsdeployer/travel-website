@@ -8,15 +8,23 @@ window.addEventListener("scroll", (e) => {
   }
 });
 
-// Selection on the sidebar
-// const sidebarItems = document.querySelectorAll(".sidebar-item");
-// for (var i = 0; i < sidebarItems.length; i++) {
-//   sidebarItems[i].addEventListener("click", function () {
-//     var selected = document.querySelector(".active");
-//     if (selected) {
-//       selected.classList.remove("active");
-//     }
-//     console.log("");
-//     this.classList.add("active");
-//   });
-// }
+// to show content of the selected section in the sidebar
+const sidebarLinks = document.querySelectorAll("#sidebarMenu a");
+const sections = document.querySelectorAll(".section");
+
+sidebarLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    // Remove the show class from all links and sections
+    sidebarLinks.forEach((link) => {
+      link.classList.remove("show");
+      link.classList.remove("active");
+    });
+
+    sections.forEach((section) => section.classList.remove("show"));
+
+    // Add the active class to the clicked link and associated section
+    link.classList.add("show");
+    link.classList.add("active");
+    document.querySelector(link.getAttribute("href")).classList.add("show");
+  });
+});

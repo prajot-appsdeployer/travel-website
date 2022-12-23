@@ -47,6 +47,7 @@
 
     <!-- Sidebar and Content-->
     <div class="sidebar-page-container">
+      <!-- Sidebar -->
       <div class="sidebar-content">
         <nav
           id="sidebarMenu"
@@ -72,7 +73,7 @@
 
               <a
                 href="contact.html"
-                class="list-group-item list-group-item-action py-2 ripple sidebar-item active"
+                class="list-group-item list-group-item-action py-2 ripple sidebar-item"
                 ><i class="fa-solid fa-envelope fa-fw me-3"></i
                 ><span>Contact us</span></a
               >
@@ -81,14 +82,150 @@
         </nav>
       </div>
 
-      <!-- Home -->
+      <!-- Contact -->
       <div class="content">
-        <section id="home">
+        <section id="contact-us" class="section show">
           <div class="container">
-            <h1 class="display-1 text-center mt-3 pb-3">Contact Us</h1>
+            <h1 class="display-1 text-center mt-3 pb-5">Contact Us</h1>
 
-            <!-- Table -->
-            <div class="container home-c2"></div>
+            <!-- Form -->
+            <div class="form-container mb-5">
+              <form class="form row g-3">
+                <div class="col-md-6">
+                  <label for="fname" class="form-label">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="First name"
+                    aria-label="First name"
+                    id="fname"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="lname" class="form-label">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Last name"
+                    aria-label="Last name"
+                    id="lname"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="email">Email</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">@</div>
+                    </div>
+
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="inlineFormInputGroup"
+                      placeholder="email"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="city">Destination</label>
+                  <select class="form-select" id="city" name="city">
+                    <option selected disabled hidden>
+                      Select your destination city
+                    </option>
+                    <option>Shimla</option>
+                    <option>Jaisalmer</option>
+                    <option>Alleppey</option>
+                    <option>Shillong</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Queries</label>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="no-sound"
+                    />
+                    <label class="form-check-label" for="no-sound"
+                      >Hotels</label
+                    >
+                  </div>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="screen"
+                    />
+                    <label class="form-check-label" for="screen"> Cab</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="battery"
+                    />
+                    <label class="form-check-label" for="battery"> Tour</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <p>Select time when we sould contact.</p>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="morning" />
+                    <label class="form-check-label" for="morning"
+                      >09AM - 12PM</label
+                    >
+                  </div>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="afternoon"
+                    />
+                    <label class="form-check-label" for="afternoon"
+                      >12PM - 4PM</label
+                    >
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="evening" />
+                    <label class="form-check-label" for="evening"
+                      >4PM - 6PM</label
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label for="textarea" class="form-label"
+                    >Please explain your query :
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="textarea"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <div class="col-12 text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-success"
+                    style="background-color: #37b24d"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </section>
       </div>
