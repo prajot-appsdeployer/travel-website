@@ -30,14 +30,30 @@ body {
 .sidebar-page-container {
   display: grid;
   grid-template-columns: 250px auto;
-  grid-row: 100vh 100%;
+  grid-row: 100% 100%;
   gap: 20px;
+  overflow: hidden;
 }
 
-.sidebar-content {
-  position: relative;
+/* Sidebar  */
+#sidebar {
+  background-color: #fff;
+  position: fixed;
+  width: 240px;
+  min-height: 100vh;
+  max-height: auto;
+  padding: 55px 0 0;
+  box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.199);
+  z-index: 1;
 }
 
+/* Off navvar */
+#navbar-off {
+  display: none;
+  background-color: #51cf66 !important;
+}
+
+/* content and section*/
 .content {
   background-color: #fff;
   border-radius: 12px;
@@ -72,22 +88,14 @@ body {
   box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.61);
 }
 
-/* Sidebar  */
-.sidebar {
-  position: fixed;
-  height: 100vh;
-  width: 240px;
-  padding: 55px 0 0;
-  box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.199);
-  z-index: 1;
-}
-
 /* Home */
 
 .img-container {
   overflow: hidden;
+
   width: 900px;
   height: 600px;
+
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -122,6 +130,28 @@ body {
   align-items: center;
 }
 
+.info p {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+/* Contact  */
+
+.form-container {
+  margin: 0px auto;
+  max-width: 900px;
+}
+
+.form {
+  padding: 10px;
+  background-image: linear-gradient(
+    190deg,
+    rgb(140, 233, 154),
+    rgba(90, 132, 201, 0.1)
+  );
+  border-radius: 12px;
+}
+
 /* Footer */
 footer {
   position: absolute;
@@ -140,23 +170,6 @@ footer {
   font-size: 20px;
   margin: 20px 10px;
   color: #fff;
-}
-
-/* Contact  */
-
-.form-container {
-  margin: 0px auto;
-  max-width: 900px;
-}
-
-.form {
-  padding: 10px;
-  background-image: linear-gradient(
-    190deg,
-    rgb(140, 233, 154),
-    rgba(90, 132, 201, 0.1)
-  );
-  border-radius: 12px;
 }
 
 /* Other classes */

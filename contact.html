@@ -26,45 +26,292 @@
   <body>
     <!--Navbar -->
     <nav
-      class="navbar fixed-top navbar-light"
+      class="navbar navbar-expand-lg fixed-top navbar-light"
       style="background-color: #51cf66"
       id="navbar"
     >
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
           <i
-            class="fa-solid fa-plane-departure fa-beat-fade fa-2xl"
+            class="fas fa-solid fa-plane-departure fa-beat-fade fa-2xl"
             style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075"
           ></i>
           <span class="brand-name">Travels</span>
         </a>
-        <div class="d-flex me-3">
-          <button class="btn btn-dark me-2">Sin-up</button>
-          <button class="btn btn-dark" type="submit">Login</button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="ms-auto grid me-2">
+            <button
+              class="btn btn-outline-dark"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#signUpModal"
+            >
+              Sign-up
+            </button>
+
+            <button
+              class="btn btn-dark"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Login
+            </button>
+          </div>
         </div>
       </div>
     </nav>
+
+    <!-- Navbar Offcanvas -->
+    <nav class="navbar bg-success fixed-top" id="navbar-off">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <i
+            class="fas fa-solid fa-plane-departure fa-beat-fade fa-2xl"
+            style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075"
+          ></i>
+          <span class="brand-name">Travels</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title brand-name" id="offcanvasNavbarLabel">
+              Travels
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="sidebar-content-off">
+              <nav id="sidebarMenu-off" class="d-lg-block sidebar bg-white">
+                <div id="sidebar" class="list-group list-group-flush">
+                  <a
+                    href="#home"
+                    class="list-group-item list-group-item-action py-2 ripple sidebar-item active"
+                    aria-current="true"
+                  >
+                    <i class="fa-solid fa-house fa-fw me-3"></i
+                    ><span>Home</span>
+                  </a>
+
+                  <a
+                    href="#about-us"
+                    class="list-group-item list-group-item-action py-2 ripple sidebar-item"
+                  >
+                    <i class="fa-solid fa-users fa-fw me-3"></i
+                    ><span>About us </span>
+                  </a>
+
+                  <a
+                    href="#contact-us"
+                    class="list-group-item list-group-item-action py-2 ripple sidebar-item"
+                  >
+                    <i class="fa-solid fa-envelope fa-fw me-3"></i
+                    ><span>Contact us</span>
+                  </a>
+
+                  <button
+                    class="btn btn-outline-dark"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signUpModal"
+                  >
+                    Sign-up
+                  </button>
+
+                  <button
+                    class="btn btn-dark"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal"
+                  >
+                    Login
+                  </button>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Pop-ups -->
+    <!-- Sign up modal -->
+    <div
+      class="modal fade"
+      id="signUpModal"
+      tabindex="-1"
+      aria-labelledby="signUpModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signUpModalLabel">Login</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="mb-2">
+              <div class="form-group">
+                <label for="username">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  id="full-name"
+                  placeholder="Enter fullname"
+                />
+              </div>
+              <div class="form-group">
+                <label for="username">Email</label>
+                <input
+                  type="email"
+                  class="form-control mb-3"
+                  id="email"
+                  placeholder="Enter email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Enter password"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary me-3"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="background-color: #37b24d"
+            >
+              Sign-up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="mb-2">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  id="username"
+                  placeholder="Enter username"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Enter password"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary me-3"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="background-color: #37b24d"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Sidebar and Content-->
     <div class="sidebar-page-container">
       <!-- Sidebar -->
       <div class="sidebar-content">
-        <nav
-          id="sidebarMenu"
-          class="collapse d-lg-block sidebar collapse bg-white"
-        >
+        <nav id="sidebarMenu" class="d-lg-block sidebar bg-white">
           <div class="position-sticky">
-            <div class="list-group list-group-flush mt-4">
+            <div id="sidebar" class="list-group list-group-flush mt-4">
               <a
-                href="/"
-                class="list-group-item list-group-item-action py-2 ripple sidebar-item"
+                href="#home"
+                class="list-group-item list-group-item-action py-2 ripple sidebar-item active"
                 aria-current="true"
               >
                 <i class="fa-solid fa-house fa-fw me-3"></i><span>Home</span>
               </a>
 
               <a
-                href="about.html"
+                href="#about-us"
                 class="list-group-item list-group-item-action py-2 ripple sidebar-item"
               >
                 <i class="fa-solid fa-users fa-fw me-3"></i
@@ -72,19 +319,21 @@
               </a>
 
               <a
-                href="contact.html"
+                href="#contact-us"
                 class="list-group-item list-group-item-action py-2 ripple sidebar-item"
-                ><i class="fa-solid fa-envelope fa-fw me-3"></i
-                ><span>Contact us</span></a
               >
+                <i class="fa-solid fa-envelope fa-fw me-3"></i
+                ><span>Contact us</span>
+              </a>
             </div>
           </div>
         </nav>
       </div>
 
-      <!-- Contact -->
+      <!-- Content -->
       <div class="content">
-        <section id="contact-us" class="section show">
+        <!-- Contact Us -->
+        <section id="contact-us" class="section">
           <div class="container">
             <h1 class="display-1 text-center mt-3 pb-5">Contact Us</h1>
 

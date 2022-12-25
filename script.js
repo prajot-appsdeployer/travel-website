@@ -9,7 +9,7 @@ window.addEventListener("scroll", (e) => {
 });
 
 // to show content of the selected section in the sidebar
-const sidebarLinks = document.querySelectorAll("#sidebarMenu a");
+const sidebarLinks = document.querySelectorAll("#sidebar a");
 const sections = document.querySelectorAll(".section");
 
 sidebarLinks.forEach((link) => {

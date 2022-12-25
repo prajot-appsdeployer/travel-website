@@ -21,44 +21,147 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media-queries.css" />
 
     <title>HTML CSS DAY 4</title>
   </head>
   <body>
     <!--Navbar -->
     <nav
-      class="navbar fixed-top navbar-light"
+      class="navbar navbar-expand-lg fixed-top navbar-light"
       style="background-color: #51cf66"
       id="navbar"
     >
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
           <i
-            class="fa-solid fa-plane-departure fa-beat-fade fa-2xl"
+            class="fas fa-solid fa-plane-departure fa-beat-fade fa-2xl"
             style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075"
           ></i>
           <span class="brand-name">Travels</span>
         </a>
-        <div class="d-flex gap-3">
-          <button
-            class="btn btn-dark"
-            type="button"
-            class="btn btn-dark"
-            data-bs-toggle="modal"
-            data-bs-target="#signUpModal"
-          >
-            Sign-up
-          </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <button
-            type="button"
-            class="btn btn-dark"
-            data-bs-toggle="modal"
-            data-bs-target="#loginModal"
-          >
-            Login
-          </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="ms-auto grid me-2">
+            <button
+              class="btn btn-outline-dark"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#signUpModal"
+            >
+              Sign-up
+            </button>
+
+            <button
+              class="btn btn-dark"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar Offcanvas -->
+    <nav class="navbar bg-success fixed-top" id="navbar-off">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <i
+            class="fas fa-solid fa-plane-departure fa-beat-fade fa-2xl"
+            style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075"
+          ></i>
+          <span class="brand-name">Travels</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title brand-name" id="offcanvasNavbarLabel">
+              Travels
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="sidebar-content-off">
+              <nav id="sidebarMenu-off" class="d-lg-block sidebar bg-white">
+                <div id="sidebar" class="list-group list-group-flush">
+                  <a
+                    href="#home"
+                    class="list-group-item list-group-item-action py-2 ripple sidebar-item active"
+                    aria-current="true"
+                  >
+                    <i class="fa-solid fa-house fa-fw me-3"></i
+                    ><span>Home</span>
+                  </a>
+
+                  <a
+                    href="#about-us"
+                    class="list-group-item list-group-item-action py-2 ripple sidebar-item"
+                  >
+                    <i class="fa-solid fa-users fa-fw me-3"></i
+                    ><span>About us </span>
+                  </a>
+
+                  <a
+                    href="#contact-us"
+                    class="list-group-item list-group-item-action py-2 ripple sidebar-item"
+                  >
+                    <i class="fa-solid fa-envelope fa-fw me-3"></i
+                    ><span>Contact us</span>
+                  </a>
+
+                  <button
+                    class="btn btn-outline-dark"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signUpModal"
+                  >
+                    Sign-up
+                  </button>
+
+                  <button
+                    class="btn btn-dark"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal"
+                  >
+                    Login
+                  </button>
+                </div>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -133,7 +236,6 @@
         </div>
       </div>
     </div>
-
     <!-- Login modal -->
     <div
       class="modal fade"
@@ -235,7 +337,7 @@
         <!-- Home -->
         <section id="home" class="section show">
           <div class="container">
-            <h1 class="display-1 text-center mt-3 pb-3">Wanderlust</h1>
+            <h1 class="h1 display-1 text-center mt-3 pb-3">Wanderlust</h1>
 
             <!-- Hero -->
             <div class="img-container mt-5">
@@ -481,9 +583,9 @@
               </svg>
 
               <div class="info">
-                <p class="display-1 fs-3">
+                <p class="display-1">
                   Come wander around the world with us! Experience new cultures,
-                  taste delicious foods, and meet interesting people.Embrace
+                  taste delicious foods, and meet interesting people. Embrace
                   your wanderlust.
                 </p>
                 <div class="d-flex gap-3">
