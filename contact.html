@@ -1,521 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Spray+Paint&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>HTML CSS DAY 4</title>
-  </head>
-  <body>
-    <!--Navbar -->
-    <nav
-      class="navbar navbar-expand-lg fixed-top navbar-light"
-      style="background-color: #51cf66"
-      id="navbar"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <i
-            class="fas fa-solid fa-plane-departure fa-beat-fade fa-2xl"
-            style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075"
-          ></i>
-          <span class="brand-name">Travels</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Spray+Paint&display=swap"
+    rel="stylesheet" />
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="ms-auto grid me-2">
-            <button
-              class="btn btn-outline-dark"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#signUpModal"
-            >
-              Sign-up
-            </button>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <title>HTML CSS DAY 4</title>
+</head>
 
-            <button
-              class="btn btn-dark"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-            >
-              Login
-            </button>
+<body>
+  <!--Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #51cf66" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <i class="fas fa-solid fa-plane-departure fa-beat-fade fa-2xl"
+          style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075"></i>
+        <span class="brand-name">Travels</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="ms-auto grid me-2">
+          <button class="btn btn-outline-dark" type="button" data-bs-toggle="modal" data-bs-target="#signUpModal">
+            Sign-up
+          </button>
+
+          <button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Navbar Offcanvas -->
+  <nav class="navbar bg-success fixed-top" id="navbar-off">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <i class="fas fa-solid fa-plane-departure fa-beat-fade fa-2xl"
+          style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075"></i>
+        <span class="brand-name">Travels</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title brand-name" id="offcanvasNavbarLabel">
+            Travels
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="sidebar-content-off">
+            <nav id="sidebarMenu-off" class="d-lg-block sidebar bg-white">
+              <div id="sidebar" class="list-group list-group-flush">
+                <a href="index.html" class="list-group-item list-group-item-action py-2 ripple sidebar-item "
+                  aria-current="true">
+                  <i class="fa-solid fa-house fa-fw me-3"></i><span>Home</span>
+                </a>
+
+                <a href="about.html" class="list-group-item list-group-item-action py-2 ripple sidebar-item">
+                  <i class="fa-solid fa-users fa-fw me-3"></i><span>About us </span>
+                </a>
+
+                <a href="contact.html" class="list-group-item list-group-item-action py-2 ripple sidebar-item active">
+                  <i class="fa-solid fa-envelope fa-fw me-3"></i><span>Contact us</span>
+                </a>
+
+                <button class="btn btn-outline-dark" type="button" data-bs-toggle="modal" data-bs-target="#signUpModal">
+                  Sign-up
+                </button>
+
+                <button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                  Login
+                </button>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Navbar Offcanvas -->
-    <nav class="navbar bg-success fixed-top" id="navbar-off">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <i
-            class="fas fa-solid fa-plane-departure fa-beat-fade fa-2xl"
-            style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075"
-          ></i>
-          <span class="brand-name">Travels</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="offcanvas offcanvas-start"
-          tabindex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title brand-name" id="offcanvasNavbarLabel">
-              Travels
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <div class="sidebar-content-off">
-              <nav id="sidebarMenu-off" class="d-lg-block sidebar bg-white">
-                <div id="sidebar" class="list-group list-group-flush">
-                  <a
-                    href="#home"
-                    class="list-group-item list-group-item-action py-2 ripple sidebar-item active"
-                    aria-current="true"
-                  >
-                    <i class="fa-solid fa-house fa-fw me-3"></i
-                    ><span>Home</span>
-                  </a>
-
-                  <a
-                    href="#about-us"
-                    class="list-group-item list-group-item-action py-2 ripple sidebar-item"
-                  >
-                    <i class="fa-solid fa-users fa-fw me-3"></i
-                    ><span>About us </span>
-                  </a>
-
-                  <a
-                    href="#contact-us"
-                    class="list-group-item list-group-item-action py-2 ripple sidebar-item"
-                  >
-                    <i class="fa-solid fa-envelope fa-fw me-3"></i
-                    ><span>Contact us</span>
-                  </a>
-
-                  <button
-                    class="btn btn-outline-dark"
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#signUpModal"
-                  >
-                    Sign-up
-                  </button>
-
-                  <button
-                    class="btn btn-dark"
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginModal"
-                  >
-                    Login
-                  </button>
-                </div>
-              </nav>
+  <!-- Pop-ups -->
+  <!-- Sign up modal -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signUpModalLabel">Sign-up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="mb-2">
+            <div class="form-group">
+              <label for="username">Full Name</label>
+              <input type="text" class="form-control mb-3" id="full-name" placeholder="Enter fullname" />
             </div>
-          </div>
+            <div class="form-group">
+              <label for="username">Email</label>
+              <input type="email" class="form-control mb-3" id="email" placeholder="Enter email" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary me-3" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-success" style="background-color: #37b24d">
+            Sign-up
+          </button>
         </div>
       </div>
-    </nav>
+    </div>
+  </div>
+  <!-- Login modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="mb-2">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control mb-3" id="username" placeholder="Enter username" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary me-3" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-success" style="background-color: #37b24d">
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Pop-ups -->
-    <!-- Sign up modal -->
-    <div
-      class="modal fade"
-      id="signUpModal"
-      tabindex="-1"
-      aria-labelledby="signUpModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="signUpModalLabel">Login</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+  <!-- Sidebar and Content-->
+  <div class="sidebar-page-container">
+    <!-- Sidebar -->
+    <div class="sidebar-content">
+      <nav id="sidebarMenu" class="d-lg-block sidebar bg-white">
+        <div class="position-sticky">
+          <div id="sidebar" class="list-group list-group-flush mt-4">
+            <a href="index.html" class="list-group-item list-group-item-action py-2 ripple sidebar-item "
+              aria-current="true">
+              <i class="fa-solid fa-house fa-fw me-3"></i><span>Home</span>
+            </a>
+
+            <a href="about.html" class="list-group-item list-group-item-action py-2 ripple sidebar-item">
+              <i class="fa-solid fa-users fa-fw me-3"></i><span>About us </span>
+            </a>
+
+            <a href="contact.html" class="list-group-item list-group-item-action py-2 ripple sidebar-item active">
+              <i class="fa-solid fa-envelope fa-fw me-3"></i><span>Contact us</span>
+            </a>
           </div>
-          <div class="modal-body">
-            <form class="mb-2">
-              <div class="form-group">
-                <label for="username">Full Name</label>
-                <input
-                  type="text"
-                  class="form-control mb-3"
-                  id="full-name"
-                  placeholder="Enter fullname"
-                />
+        </div>
+      </nav>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Contact Us -->
+      <section id="contact-us" class="section show">
+        <div class="container">
+          <h1 class="display-1 text-center mt-3 pb-5">Contact Us</h1>
+
+          <!-- Form -->
+          <div class="form-container mb-5">
+            <form class="form row g-3">
+              <div class="col-md-6">
+                <label for="fname" class="form-label">First Name</label>
+                <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="fname" />
               </div>
-              <div class="form-group">
-                <label for="username">Email</label>
-                <input
-                  type="email"
-                  class="form-control mb-3"
-                  id="email"
-                  placeholder="Enter email"
-                />
+
+              <div class="col-md-6">
+                <label for="lname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="lname" />
               </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Enter password"
-                />
+
+              <div class="col-md-6">
+                <label class="form-label" for="email">Email</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                  </div>
+
+                  <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="email" />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label" for="city">Destination</label>
+                <select class="form-select" id="city" name="city">
+                  <option selected disabled hidden>
+                    Select your destination city
+                  </option>
+                  <option>Shimla</option>
+                  <option>Jaisalmer</option>
+                  <option>Alleppey</option>
+                  <option>Shillong</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Queries</label>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="no-sound" />
+                  <label class="form-check-label" for="no-sound">Hotels</label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="screen" />
+                  <label class="form-check-label" for="screen"> Cab</label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="battery" />
+                  <label class="form-check-label" for="battery"> Tour</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <p>Select time when we sould contact.</p>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="morning" />
+                  <label class="form-check-label" for="morning">09AM - 12PM</label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="afternoon" />
+                  <label class="form-check-label" for="afternoon">12PM - 4PM</label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="evening" />
+                  <label class="form-check-label" for="evening">4PM - 6PM</label>
+                </div>
+              </div>
+
+              <div>
+                <label for="textarea" class="form-label">Please explain your query :
+                </label>
+                <textarea class="form-control" id="textarea" rows="4"></textarea>
+              </div>
+
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-success" style="background-color: #37b24d">
+                  Submit
+                </button>
               </div>
             </form>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-outline-secondary me-3"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              class="btn btn-success"
-              style="background-color: #37b24d"
-            >
-              Sign-up
-            </button>
-          </div>
         </div>
-      </div>
+      </section>
     </div>
-    <!-- Login modal -->
-    <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="mb-2">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input
-                  type="text"
-                  class="form-control mb-3"
-                  id="username"
-                  placeholder="Enter username"
-                />
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Enter password"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-outline-secondary me-3"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              class="btn btn-success"
-              style="background-color: #37b24d"
-            >
-              Login
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 
-    <!-- Sidebar and Content-->
-    <div class="sidebar-page-container">
-      <!-- Sidebar -->
-      <div class="sidebar-content">
-        <nav id="sidebarMenu" class="d-lg-block sidebar bg-white">
-          <div class="position-sticky">
-            <div id="sidebar" class="list-group list-group-flush mt-4">
-              <a
-                href="#home"
-                class="list-group-item list-group-item-action py-2 ripple sidebar-item active"
-                aria-current="true"
-              >
-                <i class="fa-solid fa-house fa-fw me-3"></i><span>Home</span>
-              </a>
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <a href="https://www.facebook.com/prajot.baloliya.75" target="_blank">
+      <ion-icon class="sm-icon" name="logo-facebook"></ion-icon>
+    </a>
+    <a href="https://twitter.com/s1xine" target="_blank">
+      <ion-icon class="sm-icon" name="logo-twitter"></ion-icon>
+    </a>
+    <a href="https://www.linkedin.com/in/prajotbaloliya/" target="_blank">
+      <ion-icon class="sm-icon" name="logo-linkedin"></ion-icon>
+    </a>
+    <a href="https://www.instagram.com/prajot_baloliya/" target="_blank">
+      <ion-icon class="sm-icon" name="logo-instagram"></ion-icon>
+    </a>
+    <p class="mb-0">&copy; All rights reserved</p>
+    <p class="mb-0">Made by Prajot Baloliya</p>
+  </footer>
 
-              <a
-                href="#about-us"
-                class="list-group-item list-group-item-action py-2 ripple sidebar-item"
-              >
-                <i class="fa-solid fa-users fa-fw me-3"></i
-                ><span>About us </span>
-              </a>
+  <!-- JavaScript Bundle with Popper -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://kit.fontawesome.com/3f74c5b260.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
 
-              <a
-                href="#contact-us"
-                class="list-group-item list-group-item-action py-2 ripple sidebar-item"
-              >
-                <i class="fa-solid fa-envelope fa-fw me-3"></i
-                ><span>Contact us</span>
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-
-      <!-- Content -->
-      <div class="content">
-        <!-- Contact Us -->
-        <section id="contact-us" class="section">
-          <div class="container">
-            <h1 class="display-1 text-center mt-3 pb-5">Contact Us</h1>
-
-            <!-- Form -->
-            <div class="form-container mb-5">
-              <form class="form row g-3">
-                <div class="col-md-6">
-                  <label for="fname" class="form-label">First Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="First name"
-                    aria-label="First name"
-                    id="fname"
-                  />
-                </div>
-
-                <div class="col-md-6">
-                  <label for="lname" class="form-label">Last Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Last name"
-                    aria-label="Last name"
-                    id="lname"
-                  />
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label" for="email">Email</label>
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">@</div>
-                    </div>
-
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="inlineFormInputGroup"
-                      placeholder="email"
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label" for="city">Destination</label>
-                  <select class="form-select" id="city" name="city">
-                    <option selected disabled hidden>
-                      Select your destination city
-                    </option>
-                    <option>Shimla</option>
-                    <option>Jaisalmer</option>
-                    <option>Alleppey</option>
-                    <option>Shillong</option>
-                  </select>
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Queries</label>
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="no-sound"
-                    />
-                    <label class="form-check-label" for="no-sound"
-                      >Hotels</label
-                    >
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="screen"
-                    />
-                    <label class="form-check-label" for="screen"> Cab</label>
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="battery"
-                    />
-                    <label class="form-check-label" for="battery"> Tour</label>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <p>Select time when we sould contact.</p>
-
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" id="morning" />
-                    <label class="form-check-label" for="morning"
-                      >09AM - 12PM</label
-                    >
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      id="afternoon"
-                    />
-                    <label class="form-check-label" for="afternoon"
-                      >12PM - 4PM</label
-                    >
-                  </div>
-
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" id="evening" />
-                    <label class="form-check-label" for="evening"
-                      >4PM - 6PM</label
-                    >
-                  </div>
-                </div>
-
-                <div>
-                  <label for="textarea" class="form-label"
-                    >Please explain your query :
-                  </label>
-                  <textarea
-                    class="form-control"
-                    id="textarea"
-                    rows="4"
-                  ></textarea>
-                </div>
-
-                <div class="col-12 text-center">
-                  <button
-                    type="submit"
-                    class="btn btn-success"
-                    style="background-color: #37b24d"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer text-center">
-      <a href="https://www.facebook.com/prajot.baloliya.75" target="_blank"
-        ><ion-icon class="sm-icon" name="logo-facebook"></ion-icon
-      ></a>
-      <a href="https://twitter.com/s1xine" target="_blank"
-        ><ion-icon class="sm-icon" name="logo-twitter"></ion-icon
-      ></a>
-      <a href="https://www.linkedin.com/in/prajotbaloliya/" target="_blank"
-        ><ion-icon class="sm-icon" name="logo-linkedin"></ion-icon
-      ></a>
-      <a href="https://www.instagram.com/prajot_baloliya/" target="_blank"
-        ><ion-icon class="sm-icon" name="logo-instagram"></ion-icon
-      ></a>
-      <p class="mb-0">&copy; All rights reserved</p>
-      <p class="mb-0">Made by Prajot Baloliya</p>
-    </footer>
-
-    <!-- JavaScript Bundle with Popper -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/3f74c5b260.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
-  </body>
 </html>
