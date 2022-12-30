@@ -54,6 +54,10 @@
     display: none !important;
   }
 
+  .sidebar-toggle {
+    display: none;
+  }
+
   #navbar {
     display: none;
   }
@@ -109,6 +113,10 @@
   /* Sidebar original */
   #sidebarMenu {
     display: none !important;
+  }
+
+  .sidebar-toggle {
+    display: none;
   }
 
   #navbar {
@@ -178,6 +186,10 @@
   /* Sidebar original */
   #sidebarMenu {
     display: none !important;
+  }
+
+  .sidebar-toggle {
+    display: none;
   }
 
   #navbar {
@@ -251,6 +263,10 @@
   /* Sidebar original */
   #sidebarMenu {
     display: none !important;
+  }
+
+  .sidebar-toggle {
+    display: none;
   }
 
   #navbar {

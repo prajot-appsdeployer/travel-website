@@ -30,13 +30,21 @@ body {
 
 .sidebar-page-container {
   display: grid;
-  grid-template-columns: 250px auto;
-  grid-row: 100% 100%;
-  gap: 20px;
+  grid-template-columns: 240px auto;
+  gap: 30px;
   overflow: hidden;
 }
 
+.only-content {
+  grid-template-columns: 1fr;
+  margin: 0px auto;
+}
+
 /* Sidebar  */
+.sidebar-content {
+  transition: transform 300ms ease-in;
+}
+
 #sidebar {
   background-color: #fff;
   position: fixed;
@@ -46,6 +54,34 @@ body {
   padding: 55px 0 0;
   box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.199);
   z-index: 1;
+}
+
+.sidebar-content {
+  position: relative;
+}
+
+.sidebar-toggle {
+  border: 1px solid grey;
+  border-radius: 0px 5px 5px 0px;
+  background-color: white;
+  padding: 10px 10px 7px 10px;
+
+  position: fixed;
+  left: 240px;
+  top: 90px;
+
+  color: #2f9e44;
+  font-size: 24px;
+}
+
+.sbt-notactive {
+  color: white;
+  background-color: #2f9e44;
+  font-size: 24px;
+}
+
+.st-left {
+  left: 0px;
 }
 
 /* Off navvar */
@@ -196,5 +232,5 @@ a.active {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }

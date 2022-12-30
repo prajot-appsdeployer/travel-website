@@ -187,7 +187,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form class="mb-2">
+            <form class="mb-2" id="signUpForm">
               <div class="form-group">
                 <label for="username">Full Name</label>
                 <input
@@ -195,6 +195,8 @@
                   class="form-control mb-3"
                   id="full-name"
                   placeholder="Enter full name"
+                  name="FullName"
+                  required
                 />
               </div>
               <div class="form-group">
@@ -204,6 +206,8 @@
                   class="form-control mb-3"
                   id="email"
                   placeholder="Enter email"
+                  name="EMail"
+                  required
                 />
               </div>
               <div class="form-group">
@@ -213,6 +217,8 @@
                   class="form-control"
                   id="password"
                   placeholder="Enter password"
+                  name="Password"
+                  required
                 />
               </div>
             </form>
@@ -227,7 +233,7 @@
               Login
             </button>
             <button
-              type="button"
+              type="submit"
               class="btn btn-success"
               style="background-color: #37b24d"
             >
@@ -256,15 +262,18 @@
               aria-label="Close"
             ></button>
           </div>
+
           <div class="modal-body">
-            <form class="mb-2">
+            <form class="mb-2" id="loginForm">
               <div class="form-group">
                 <label for="username">Email</label>
                 <input
                   type="text"
                   class="form-control mb-3"
                   id="username"
-                  placeholder="Enter email"
+                  placeholder="Enter email "
+                  name="EMail"
+                  required
                 />
               </div>
               <div class="form-group">
@@ -272,8 +281,10 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="password"
+                  id="lpassword"
                   placeholder="Enter password"
+                  name="Password"
+                  required
                 />
               </div>
             </form>
@@ -288,7 +299,7 @@
               Sign-up
             </button>
             <button
-              type="button"
+              type="submit"
               class="btn btn-success"
               style="background-color: #37b24d"
             >
@@ -300,9 +311,14 @@
     </div>
 
     <!-- Sidebar and Content-->
-    <div class="sidebar-page-container">
+    <div class="sidebar-page-container" id="sidebar-page-container">
       <!-- Sidebar -->
       <div class="sidebar-content">
+        <!-- sidebar toggle button -->
+        <button class="sidebar-toggle" id="sidebar-toggler">
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
         <nav id="sidebarMenu" class="d-lg-block sidebar bg-white">
           <div class="position-sticky">
             <div id="sidebar" class="list-group list-group-flush mt-4">
@@ -343,7 +359,7 @@
 
             <!-- Form -->
             <div class="form-container mb-5">
-              <form class="form row g-3">
+              <form class="form row g-3" name="contact">
                 <div class="col-md-6">
                   <label for="fname" class="form-label">First Name</label>
                   <input
@@ -352,6 +368,7 @@
                     placeholder="First name"
                     aria-label="First name"
                     id="fname"
+                    required
                   />
                 </div>
 
@@ -363,6 +380,7 @@
                     placeholder="Last name"
                     aria-label="Last name"
                     id="lname"
+                    required
                   />
                 </div>
 
@@ -378,6 +396,8 @@
                       class="form-control"
                       id="inlineFormInputGroup"
                       placeholder="email"
+                      name="email"
+                      required
                     />
                   </div>
                 </div>
@@ -432,7 +452,12 @@
                   <p>Select time when we sould contact.</p>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" id="morning" />
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="morning"
+                      name="number"
+                    />
                     <label class="form-check-label" for="morning"
                       >09AM - 12PM</label
                     >
@@ -443,6 +468,7 @@
                       class="form-check-input"
                       type="radio"
                       id="afternoon"
+                      name="number"
                     />
                     <label class="form-check-label" for="afternoon"
                       >12PM - 4PM</label
@@ -450,7 +476,12 @@
                   </div>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" id="evening" />
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="evening"
+                      name="number"
+                    />
                     <label class="form-check-label" for="evening"
                       >4PM - 6PM</label
                     >
@@ -473,6 +504,7 @@
                     type="submit"
                     class="btn btn-success"
                     style="background-color: #37b24d"
+                    onclick="ValidateEmail(document.contact.email)"
                   >
                     Submit
                   </button>

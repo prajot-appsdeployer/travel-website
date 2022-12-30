@@ -1,6 +1,25 @@
+const sidebarToggleBtn = document.getElementById("sidebar-toggler");
+const sidebarLinks = document.querySelectorAll("#sidebar a");
+const sections = document.querySelectorAll(".section");
+const navbar = document.getElementById("navbar");
+const sidebarMenu = document.getElementById("sidebarMenu");
+const sidebarPageContainer = document.getElementById("sidebar-page-container");
+//sidebartoggler
+
+sidebarToggleBtn.addEventListener("click", () => {
+  sidebarMenu.classList.toggle("hide");
+
+  if (sidebarMenu.classList.contains("hide")) {
+    sidebarToggleBtn.classList.add("st-left", "sbt-notactive");
+    sidebarPageContainer.classList.add("only-content");
+  } else {
+    sidebarToggleBtn.classList.remove("st-left", "sbt-notactive");
+    sidebarPageContainer.classList.remove("only-content");
+  }
+});
+
 // too add Shadow on scroll
 window.addEventListener("scroll", (e) => {
-  const navbar = document.getElementById("navbar");
   if (window.pageYOffset > 0) {
     navbar.classList.add("add-shadow");
   } else {
@@ -9,9 +28,6 @@ window.addEventListener("scroll", (e) => {
 });
 
 // to show content of the selected section in the sidebar
-const sidebarLinks = document.querySelectorAll("#sidebar a");
-const sections = document.querySelectorAll(".section");
-
 sidebarLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     // Remove the show class from all links and sections
@@ -34,56 +50,77 @@ $(document).ready(function () {
   $("#table").DataTable();
 });
 
-// // Search Functionality
-// const input = document.getElementById("searchInput");
+// Email validation for contact form
+function ValidateEmail(inputText) {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (inputText.value.match(mailformat)) {
+    alert("Form Submited");
+    document.contact.email.focus();
+    return true;
+  } else {
+    alert("You have entered an invalid email address!");
+    document.contact.email.focus();
+    return false;
+  }
+}
 
-// // Search
-// function searchTable() {
-//   let searchTerm = input.value.toLowerCase();
+//Singup form
 
-//   // Select all of the rows in the table
-//   let rows = document.querySelectorAll("tbody tr");
+const signUpForm = document.getElementById("signUpForm");
 
-//   // Loop through the rows
-//   for (var i = 0; i < rows.length; i++) {
-//     // Get the current row
-//     let row = rows[i];
+signUpForm.addEventListener("submit", (e) => {
+  let FullName = document.getElementById("full-name");
+  let Email = document.getElementById("email");
+  let pass = document.getElementById("password");
 
-//     // Select all of the cells in the row
-//     let cells = row.querySelectorAll("td");
+  let name = FullName.value;
+  let email = Email.value;
+  let password = pass.value;
 
-//     // Set a flag to indicate whether the row matches the search term
-//     let rowMatches = false;
+  let regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+  let regName = /\d+$/g;
 
-//     // Loop through the cells
-//     for (let j = 0; j < cells.length; j++) {
-//       // Get the current cell
-//       let cell = cells[j];
+  if (name == "" || regName.test(name)) {
+    alert("Please enter your name properly.");
+    FullName.focus();
+    return false;
+  } else if (email == "" || !regEmail.test(email)) {
+    alert("Please enter a valid e-mail address.");
+    Email.focus();
+    return false;
+  } else if (password == "") {
+    alert("Please enter your password");
+    pass.focus();
+    return false;
+  } else if (password.length < 6) {
+    alert("Password should be atleast 6 character long");
+    pass.focus();
+    return false;
+  } else {
+    alert("User Registered");
+    return true;
+  }
+});
 
-//       // Check if the cell's text content includes the search term
-//       if (cell.textContent.toLowerCase().includes(searchTerm)) {
-//         // If it does, set the rowMatches flag to true
-//         rowMatches = true;
-//         break;
-//       }
-//     }
+// Login
+const loginForm = document.getElementById("loginForm");
 
-//     if (!rowMatches) {
-//       row.classList.add("hide");
-//     }
-//   }
-// }
+loginForm.addEventListener("submit", (e) => {
+  let userName = document.getElementById("username");
+  let pass = document.getElementById("lpassword");
 
-// // Remove hide class on back space from the rows
-// function removeHide() {
-//   // Check if the key that was pressed was the backspace key
-//   input.addEventListener("keydown", function (event) {
-//     const key = event.key; //
-//     if (key === "Backspace" || key === "Delete") {
-//       let rows = document.querySelectorAll("tbody tr");
-//       for (let i = 0; i < rows.length; i++) {
-//         rows[i].classList.remove("hide");
-//       }
-//     }
-//   });
-// }
+  let username = userName.value;
+  let password = pass.value;
+
+  let regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+
+  if (username == "" || !regEmail.test(username)) {
+    alert("Please enter a valid e-mail address.");
+  } else if (password == "") {
+    alert("Please enter your password");
+  } else if (password.length < 6) {
+    alert("Password should be atleast 6 character long");
+  } else {
+    alert("User Logged in.");
+  }
+});
