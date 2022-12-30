@@ -41,7 +41,8 @@ body {
 }
 
 /* Sidebar  */
-.sidebar-content {
+
+#sidebarMenu {
   transition: transform 300ms ease-in;
 }
 
@@ -70,18 +71,24 @@ body {
   left: 240px;
   top: 90px;
 
-  color: #2f9e44;
+  color: #51cf66;
   font-size: 24px;
+  transition: transform 300ms ease-in;
 }
 
 .sbt-notactive {
   color: white;
-  background-color: #2f9e44;
+  background-color: #51cf66;
   font-size: 24px;
 }
 
+.sidebar-hide {
+  transform: translateX(-15rem);
+  transition: transform 300ms ease-out;
+}
+
 .st-left {
-  left: 0px;
+  transform: translateX(-15rem);
 }
 
 /* Off navvar */

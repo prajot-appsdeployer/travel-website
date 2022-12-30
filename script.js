@@ -7,9 +7,9 @@ const sidebarPageContainer = document.getElementById("sidebar-page-container");
 //sidebartoggler
 
 sidebarToggleBtn.addEventListener("click", () => {
-  sidebarMenu.classList.toggle("hide");
+  sidebarMenu.classList.toggle("sidebar-hide");
 
-  if (sidebarMenu.classList.contains("hide")) {
+  if (sidebarMenu.classList.contains("sidebar-hide")) {
     sidebarToggleBtn.classList.add("st-left", "sbt-notactive");
     sidebarPageContainer.classList.add("only-content");
   } else {
